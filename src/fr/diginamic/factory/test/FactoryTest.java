@@ -1,7 +1,7 @@
 package fr.diginamic.factory.test;
 
-import fr.diginamic.factory.ObjetConnecteFactoryImpl;
 import fr.diginamic.factory.bo.ObjetConnecte;
+import fr.diginamic.factory.factory.ObjetConnecteFactoryImpl;
 
 public class FactoryTest {
 

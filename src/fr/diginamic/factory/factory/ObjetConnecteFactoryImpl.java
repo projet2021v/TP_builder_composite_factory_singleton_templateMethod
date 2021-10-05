@@ -1,4 +1,4 @@
-package fr.diginamic.factory;
+package fr.diginamic.factory.factory;
 
 import fr.diginamic.factory.bo.EnceinteConnectee;
 import fr.diginamic.factory.bo.ObjetConnecte;
