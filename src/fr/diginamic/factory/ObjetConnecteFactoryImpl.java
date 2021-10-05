@@ -1,5 +1,10 @@
 package fr.diginamic.factory;
 
+import fr.diginamic.factory.bo.EnceinteConnectee;
+import fr.diginamic.factory.bo.ObjetConnecte;
+import fr.diginamic.factory.bo.Tablette;
+import fr.diginamic.factory.bo.TelephonePortable;
+
 public class ObjetConnecteFactoryImpl implements IObjetConnecteFactory {
 
 	@Override

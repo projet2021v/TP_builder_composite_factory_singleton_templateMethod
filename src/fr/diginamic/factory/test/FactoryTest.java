@@ -1,4 +1,7 @@
-package fr.diginamic.factory;
+package fr.diginamic.factory.test;
+
+import fr.diginamic.factory.ObjetConnecteFactoryImpl;
+import fr.diginamic.factory.bo.ObjetConnecte;
 
 public class FactoryTest {
 
