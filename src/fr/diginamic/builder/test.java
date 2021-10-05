@@ -7,13 +7,37 @@ public class test {
 		ZooBuilder zoo1 = new ZooBuilder("monPremierZoo");
 		
 		zoo1.appendZone("zone1", 3);
+		zoo1.appendZone("zone2", 2);
 		
-		zoo1.appendAnimal("zone1", "Lion");
-		zoo1.appendAnimal("zone1", "Girafe");
-		zoo1.appendAnimal("zone1", "Pingouin");
-		zoo1.appendAnimal("zone1", "Ours");
+		zoo1.appendAnimal("zone1", new Lion());
+		zoo1.appendAnimal("zone1", new Dauphin());
+		zoo1.appendAnimal("zone1", new Animal("Ours"));
+		zoo1.appendAnimal("zone1", new Animal("Girafe"));
 		
-		Zoo zoo = zoo1.getZoo();
+		zoo1.appendAnimal("zone2", new Animal("Canard"));
+		zoo1.appendAnimal("zone2", new Animal("Canard"));
+		zoo1.appendAnimal("zone2", new Animal("Canard"));
+		
+//		Zoo zoo = zoo1.get();
+//		zoo.getAnimaux().forEach((zone, animaux) -> 
+//			{
+//				for(Animal a : animaux) {
+//					System.out.println(
+//							zoo.getNom()
+//							+ " : "
+//							+ zone.getNom()
+//							+ " (capacité "
+//							+ zone.getCapacite()
+//							+ ") "
+//							+ a.getNom());
+//				}
+//			}
+//		);
+		
+		System.out.println(zoo1.toString());
+		
+		
+		
 
 	}
 

@@ -6,34 +6,59 @@ import java.util.List;
 
 public class ZooBuilder {
 	private Zoo zoo;
-	
-	//liste des zones du zoo <nom de la zone, Zone>
-	private HashMap<String, Zone> zones;
-	
-	//liste des animaux des zones du zoo
-	private HashMap<Zone, ArrayList<Animal>> animaux;
-	
+
 	public ZooBuilder(String nom) {
 		this.zoo = new Zoo(nom);
-		this.zones = new HashMap<String, Zone>();
-		this.animaux = new HashMap<Zone, ArrayList<Animal>>();
 	}
 	
 	public ZooBuilder appendZone(String nom, Integer capacite) {
-		this.zones.put(nom, new Zone(nom, capacite));
-		this.animaux.put(zones.get(nom), new ArrayList<Animal>());
+		//ajout d'une nouvelle zone au zoo
+		HashMap<String, Zone> zones = this.zoo.getZones();
+		zones.put(nom, new Zone(nom, capacite));
+		
+		//ajout d'une liste d'animaux à la nouvelle zone
+		this.zoo.getAnimaux().put(zones.get(nom), new ArrayList<Animal>());
 		return this;
 	}
 	
-	public ZooBuilder appendAnimal(String nomZone, String nomAnimal) {
-		Zone zone = zones.get(nomZone);
-		if(animaux.get(zone).size() < zone.capacite) {
-			animaux.get(zone).add(new Animal(nomAnimal));
+	public ZooBuilder appendAnimal(String nomZone, Animal animal) {
+		//récupération de la zone dont le nom est en paramètre
+		Zone zone = this.zoo.getZones().get(nomZone);
+		
+		//récupération de la liste d'animaux relative à la zone
+		List<Animal> animaux = this.zoo.getAnimaux().get(zone);
+		
+		//test sur la capacité de la zone à accueillir un nouvel animal
+		if(animaux.size() < zone.capacite) {
+			animaux.add(animal);
 		}
 		return this;
 	}
 	
-	public Zoo getZoo() {
+	public Zoo get() {
 		return this.zoo;
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		zoo.getAnimaux().forEach((zone, animaux) -> 
+			{
+				for(Animal a : animaux) {
+					builder.append(
+							zoo.getNom()
+							+ " : "
+							+ zone.getNom()
+							+ " (capacité "
+							+ zone.getCapacite()
+							+ ") "
+							+ a.getNom()
+							+ "\n");
+				}
+			}
+		);
+		return builder.toString();
+	}
+	
+	
 }
