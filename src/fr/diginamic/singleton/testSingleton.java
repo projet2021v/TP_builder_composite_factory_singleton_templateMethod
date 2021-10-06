@@ -6,7 +6,9 @@ public class testSingleton {
 		
 		ConfigurationSingleton config = ConfigurationSingleton.getInstance();
 		
+		System.out.println(config.getConfiguration().getString("db.url"));
 		System.out.println(config.getConfiguration().getString("db.user"));
+		System.out.println(config.getConfiguration().getString("db.password"));
 	}
 
 }

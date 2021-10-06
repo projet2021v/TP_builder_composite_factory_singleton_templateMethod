@@ -5,10 +5,9 @@ import java.util.ResourceBundle;
 public class ConfigurationSingleton {
 	
 	private static ConfigurationSingleton instance = null;
-	private ResourceBundle configuration;
+	private ResourceBundle configuration = ResourceBundle.getBundle("fr.diginamic.singleton.configuration");
 	
 	private ConfigurationSingleton() {
-		this.configuration = ResourceBundle.getBundle("configuration") ;
 	}
 	
 	public static ConfigurationSingleton getInstance() {
