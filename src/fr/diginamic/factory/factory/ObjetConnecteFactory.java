@@ -5,19 +5,17 @@ import fr.diginamic.factory.bo.ObjetConnecte;
 import fr.diginamic.factory.bo.Tablette;
 import fr.diginamic.factory.bo.TelephonePortable;
 
-public class ObjetConnecteFactoryImpl implements IObjetConnecteFactory {
+public class ObjetConnecteFactory {
 
-	@Override
-	public ObjetConnecte createElement(Integer param, Integer limiteVolts) {
-		switch (param) {
-		case 1:
+	public ObjetConnecte createElement(TypeObjetEnum typeObjet, Integer limiteVolts) {
+		switch (typeObjet) {
+		case telephonePortable:
 			return new TelephonePortable(limiteVolts);
-		case 2:
+		case tablette:
 			return new Tablette(limiteVolts);
-		case 3:
+		case enceinteConnectee:
 			return new EnceinteConnectee(limiteVolts);
 		}
-		
 		return null;
 	}
 

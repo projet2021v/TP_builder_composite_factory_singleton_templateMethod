@@ -3,7 +3,6 @@ package fr.diginamic.factory.bo;
 public class ObjetConnecte {
 	private Integer limiteVolts;
 
-	
 	public ObjetConnecte(Integer limiteVolts) {
 		this.limiteVolts = limiteVolts;
 	}
