@@ -18,26 +18,9 @@ public class Test {
 		zoo1.appendAnimal("zone2", new Animal("Canard"));
 		zoo1.appendAnimal("zone2", new Animal("Canard"));
 		
-//		Zoo zoo = zoo1.get();
-//		zoo.getAnimaux().forEach((zone, animaux) -> 
-//			{
-//				for(Animal a : animaux) {
-//					System.out.println(
-//							zoo.getNom()
-//							+ " : "
-//							+ zone.getNom()
-//							+ " (capacité "
-//							+ zone.getCapacite()
-//							+ ") "
-//							+ a.getNom());
-//				}
-//			}
-//		);
+		Zoo z = zoo1.get();
 		
-		System.out.println(zoo1.toString());
-		
-		
-		
+		System.out.println(z.toString());
 
 	}
 

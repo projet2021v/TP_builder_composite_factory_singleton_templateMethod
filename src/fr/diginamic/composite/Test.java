@@ -22,8 +22,8 @@ public class Test {
 		JavaDev.getListeElements().add(KevinGuineau);
 		JavaDev.getListeElements().add(PaulMartin);
 		
-		System.out.println(CecileRaspey.calculerSalaire());
-		System.out.println(DSIN.calculerSalaire());
+		System.out.println("Salaire d\'une personne (" + CecileRaspey.getNom() + " " + CecileRaspey.getPrenom() + ") : " + CecileRaspey.calculerSalaire() + " €");
+		System.out.println("Salaire d\'un service (" + DSIN.getNom() + ") : " + DSIN.calculerSalaire() + " €");
 	}
 
 }

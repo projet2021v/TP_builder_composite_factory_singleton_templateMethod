@@ -6,8 +6,6 @@ public class Employe implements IElement {
 	private String prenom;
 	private double salaire;
 	
-	
-	
 	Employe(String nom, String prenom, double salaire) {
 		this.nom = nom;
 		this.prenom = prenom;

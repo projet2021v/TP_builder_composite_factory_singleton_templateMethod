@@ -1,8 +1,11 @@
 package fr.diginamic.builder;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 public class ZooBuilder {
 	private Zoo zoo;
@@ -16,8 +19,11 @@ public class ZooBuilder {
 		HashMap<String, Zone> zones = this.zoo.getZones();
 		zones.put(nom, new Zone(nom, capacite));
 		
-		//ajout d'une liste d'animaux à la nouvelle zone
+		//ajout d'une liste d'animaux (vide) à la nouvelle zone
 		this.zoo.getAnimaux().put(zones.get(nom), new ArrayList<Animal>());
+		
+		System.out.println("La zone \"" + nom + "\" a été ajoutée");
+		
 		return this;
 	}
 	
@@ -26,11 +32,14 @@ public class ZooBuilder {
 		Zone zone = this.zoo.getZones().get(nomZone);
 		
 		//récupération de la liste d'animaux relative à la zone
-		List<Animal> animaux = this.zoo.getAnimaux().get(zone);
+		List<Animal> animauxDeLaZone = this.zoo.getAnimaux().get(zone);
 		
 		//test sur la capacité de la zone à accueillir un nouvel animal
-		if(animaux.size() < zone.capacite) {
-			animaux.add(animal);
+		if(animauxDeLaZone.size() < zone.capacite) {
+			animauxDeLaZone.add(animal);
+			System.out.println("Un(e) " + animal.getNom() + " a été ajouté à la zone " + zone.getNom());
+		} else  {
+			System.err.println("La zone \"" + zone.getNom() + "\" ne peut plus accepter d'animaux (capacité déjà atteinte)");
 		}
 		return this;
 	}
@@ -39,26 +48,4 @@ public class ZooBuilder {
 		return this.zoo;
 	}
 
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		zoo.getAnimaux().forEach((zone, animaux) -> 
-			{
-				for(Animal a : animaux) {
-					builder.append(
-							zoo.getNom()
-							+ " : "
-							+ zone.getNom()
-							+ " (capacité "
-							+ zone.getCapacite()
-							+ ") "
-							+ a.getNom()
-							+ "\n");
-				}
-			}
-		);
-		return builder.toString();
-	}
-	
-	
 }
