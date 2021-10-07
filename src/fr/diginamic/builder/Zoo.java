@@ -46,11 +46,9 @@ public class Zoo {
 			
 			this.getAnimaux().get(zone).forEach((animal) ->
 			{
-				builder.append(animal.getNom() + ", ");
+				builder.append(animal.getNom() + " ");
 			});
-			
-			//suppression de la dernière virgule
-			builder.deleteCharAt(builder.length()-2);
+
 			builder.append("\n");
 		});
 		
