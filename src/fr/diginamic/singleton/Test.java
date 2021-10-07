@@ -1,6 +1,6 @@
 package fr.diginamic.singleton;
 
-public class testSingleton {
+public class Test {
 
 	public static void main(String[] args) {
 		

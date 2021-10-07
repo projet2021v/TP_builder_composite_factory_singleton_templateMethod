@@ -4,7 +4,7 @@ import fr.diginamic.factory.bo.ObjetConnecte;
 import fr.diginamic.factory.factory.ObjetConnecteFactory;
 import fr.diginamic.factory.factory.TypeObjetEnum;
 
-public class FactoryTest {
+public class Test {
 
 	public static void main(String[] args) {
 		

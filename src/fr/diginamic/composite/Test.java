@@ -1,6 +1,6 @@
 package fr.diginamic.composite;
 
-public class test {
+public class Test {
 
 	public static void main(String[] args) {
 		Service DSIN = new Service("DSIN");
